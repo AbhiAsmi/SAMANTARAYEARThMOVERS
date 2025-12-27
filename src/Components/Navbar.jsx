@@ -4,9 +4,9 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 
 const navLinks = [
   { label: "Home", id: "home" },
-  // { label: "Building", id: "building" },
   { label: "Services", id: "services" },
   { label: "About", id: "about" },
+ { label: "Stats", id: "stats" },
   { label: "Equipments", id: "description" },
   { label: "Contact US", id: "owner" },
 ];

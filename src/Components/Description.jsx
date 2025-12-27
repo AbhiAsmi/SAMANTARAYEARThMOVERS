@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,16 +8,13 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Description({ items = defaultItems }) {
   const containerRef = useRef(null);
   const rafIdRef = useRef(null);
-  const lenisRef = useRef(null);
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.3,
+      duration: 0.35,
       easing: (t) => 1 - Math.pow(1 - t, 4),
       smoothWheel: true,
-      smoothTouch: false,
     });
-    lenisRef.current = lenis;
 
     const raf = (time) => {
       lenis.raf(time);
@@ -32,13 +28,13 @@ export default function Description({ items = defaultItems }) {
       if (!container) return;
 
       const itemsEls = gsap.utils.toArray(".desc-item", container);
-      if (!itemsEls.length) return;
+      const wrapper = container.querySelector(".stack-wrapper");
+      if (!itemsEls.length || !wrapper) return;
 
       const mm = gsap.matchMedia();
 
       /* ================= DESKTOP ================= */
       mm.add("(min-width: 768px)", () => {
-        const wrapper = container.querySelector(".stack-wrapper");
         gsap.set(wrapper, { position: "relative" });
 
         gsap.set(itemsEls, {
@@ -47,7 +43,7 @@ export default function Description({ items = defaultItems }) {
           margin: "auto",
           width: "100%",
           autoAlpha: 0,
-          y: 50,
+          y: 60,
         });
 
         const tl = gsap.timeline({
@@ -57,7 +53,6 @@ export default function Description({ items = defaultItems }) {
             end: "+=1600",
             scrub: 0.6,
             pin: true,
-            anticipatePin: 1,
           },
         });
 
@@ -75,26 +70,27 @@ export default function Description({ items = defaultItems }) {
             i === 0 ? 0 : "-=0.22"
           ).to(el, {
             autoAlpha: 0,
-            y: -35,
-            duration: 0.28,
+            y: -40,
+            duration: 0.3,
             ease: "power2.inOut",
           });
         });
 
         return () => tl.kill();
       });
+
+      /* ================= MOBILE ================= */
       mm.add("(max-width: 767px)", () => {
-        const wrapper = container.querySelector(".stack-wrapper");
         gsap.set(wrapper, { position: "relative" });
 
         gsap.set(itemsEls, {
           position: "absolute",
           inset: 0,
           margin: "auto",
-          width: "95%",
-          height: "90%",
+          width: "92%",
+          height: "80vh",
           autoAlpha: 0,
-          y: 20,
+          y: 30,
           display: "flex",
           flexDirection: "column",
         });
@@ -104,19 +100,11 @@ export default function Description({ items = defaultItems }) {
           const arrow = el.querySelector(".desc-arrow");
           const text = el.querySelector(".desc-text");
 
-          if (img) gsap.set(img, { height: "60%", width: "100%" });
-          if (arrow)
-            gsap.set(arrow, {
-              height: "10%",
-              width: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            });
+          if (img) gsap.set(img, { height: "55%" });
+          if (arrow) gsap.set(arrow, { height: "10%" });
           if (text)
             gsap.set(text, {
-              height: "30%",
-              width: "100%",
+              height: "35%",
               overflowY: "auto",
             });
         });
@@ -124,11 +112,10 @@ export default function Description({ items = defaultItems }) {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: wrapper,
-            start: "top 15%",
-            end: "+=1000",
+            start: "top 10%",
+            end: "+=1200",
             scrub: 0.4,
             pin: true,
-            anticipatePin: 1,
           },
         });
 
@@ -139,15 +126,15 @@ export default function Description({ items = defaultItems }) {
             {
               autoAlpha: 1,
               y: 0,
-              duration: 0.25,
+              duration: 0.3,
               ease: "power3.out",
               onStart: () => gsap.set(el, { zIndex: z++ }),
             },
             i === 0 ? 0 : "-=0.18"
           ).to(el, {
             autoAlpha: 0,
-            y: -18,
-            duration: 0.2,
+            y: -25,
+            duration: 0.25,
             ease: "power2.inOut",
           });
         });
@@ -156,7 +143,7 @@ export default function Description({ items = defaultItems }) {
       });
     }, containerRef);
 
-    requestAnimationFrame(() => ScrollTrigger.refresh());
+    ScrollTrigger.refresh();
 
     return () => {
       cancelAnimationFrame(rafIdRef.current);
@@ -168,31 +155,53 @@ export default function Description({ items = defaultItems }) {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen bg-white text-black py-20 px-6 md:px-16"
+      className="min-h-screen bg-white text-black py-24 px-4 md:px-16"
     >
-      <h1 className="text-3xl font-semibold mb-6">VEHICLES</h1>
+      {/* LONG HEADING */}
+      <h1 className="text-4xl md:text-6xl font-bold mb-10 leading-tight max-w-4xl">
+        Heavy Vehicles & Machinery <br className="hidden md:block" />
+        Powering Infrastructure Development
+      </h1>
 
-      <div className="stack-wrapper relative w-full h-full" style={{ height: "70vh" }}>
+      <div
+        className="stack-wrapper relative w-full"
+        style={{ height: "80vh" }}
+      >
         {items.map((it) => (
           <article
             key={it.id}
-            className="desc-item flex flex-col md:flex-row  items-center gap-6 px-6 py-6 rounded-2xl bg-black md:bg-white"
+            className="
+              desc-item
+              flex flex-col md:flex-row
+              items-center gap-6
+              px-5 py-6
+              rounded-3xl
+              bg-black md:bg-white
+              shadow-xl
+            "
           >
-            <div className="desc-image w-full md:w-[45%] h-[40%] md:h-[70%] text-black bg-amber-900 rounded-md overflow-hidden">
+            {/* IMAGE */}
+            <div className="desc-image w-full md:w-[45%] rounded-xl overflow-hidden">
               <img
                 src={it.imgSrc}
                 alt={it.title}
-                className="w-full h-full object-cover text-black"
-              /> 
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div className="desc-arrow h-[10%] md:h-auto flex items-center justify-center">
+            {/* ARROW */}
+            <div className="desc-arrow flex items-center justify-center">
               <ArrowIcon />
             </div>
 
-            <div className="desc-text w-full md:w-[45%] h-[40%] md:h-auto overflow-hidden">
-              <h1 className="text-2xl underline">{it.title}</h1>
-              <p className="text-white md:text-black  text-[3vw] md:text-[2vw] p-4">{it.text}</p>
+            {/* TEXT */}
+            <div className="desc-text w-full md:w-[45%] px-2">
+              <h2 className="text-2xl font-semibold underline mb-3">
+                {it.title}
+              </h2>
+              <p className="text-white md:text-black text-base md:text-lg leading-relaxed">
+                {it.text}
+              </p>
             </div>
           </article>
         ))}
@@ -202,8 +211,8 @@ export default function Description({ items = defaultItems }) {
 }
 
 const ArrowIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-    <rect width="24" height="24" rx="8" fill="white" fillOpacity="0.06" />
+  <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+    <rect width="24" height="24" rx="8" fill="white" fillOpacity="0.08" />
     <path
       d="M7 12h10M13 8l4 4-4 4"
       stroke="white"
@@ -218,31 +227,31 @@ const defaultItems = [
   {
     id: "1",
     title: "Mixer Machine",
-    text: "mixer machine- Reliable concrete mixer for road construction, infrastructure projects, and professional rental operations.",
+    text: "Reliable concrete mixer for road construction, infrastructure projects, and professional rental operations.",
     imgSrc: "photos/ChatGPT Image Dec 21, 2025, 12_29_54 PM.png",
   },
   {
     id: "2",
     title: "Earthmover",
-    text: " Powerful earthmover for construction, land development, and major infrastructure projects with rental support.",
+    text: "Powerful earthmover for construction, land development, and major infrastructure projects with rental support.",
     imgSrc: "photos/ChatGPT Image Dec 21, 2025, 12_38_02 PM.png",
   },
   {
     id: "3",
     title: "Trailer",
-    text: "Reliable heavy trailer for transporting machinery, vehicles, electrical poles, and construction materials safely.",
+    text: "Heavy trailer for transporting machinery, vehicles, and construction materials safely.",
     imgSrc: "photos/Gemini_Generated_Image_2r89lj2r89lj2r89.png",
   },
   {
     id: "4",
-    title: "Exavitor",
-    text: "Powerful excavator for construction, land development, and infrastructure projects with reliable rental service.",
+    title: "Excavator",
+    text: "High-performance excavator for infrastructure, mining, and land development projects.",
     imgSrc: "photos/Gemini_Generated_Image_jx7z57jx7z57jx7z~2.png",
   },
   {
     id: "5",
-    title: "Road-Roller",
-    text: "road roller- Powerful road roller for highway building, site preparation, infrastructure development, and rental use.",
+    title: "Road Roller",
+    text: "Powerful road roller for highways, site preparation, and infrastructure development.",
     imgSrc: "photos/Gemini_Generated_Image_x58sxzx58sxzx58s~2.png",
   },
 ];

@@ -18,10 +18,6 @@ const Pages = () => {
         <HomePage />
       </section>
 
-      {/* <section id="building">
-        <Building />
-      </section> */}
-
       <section id="icons">
         <IconContent />
       </section>
