@@ -1,10 +1,16 @@
 import React from "react";
-import Pages from "./ContentPage/Pages";
+import Router from "./Components/Router.jsx";
+import Navbar from "./Components/Navbar";
+import Pages from "./ContentPage/Pages.jsx";
+import Owner from "./Components/Owner.jsx";
+
 const App = () => {
   return (
-    <div className="">
-      <Pages />
-    </div>
+    <>
+    <Navbar/>
+  <Router/>
+  <Owner/>
+    </>
   );
 };
 
