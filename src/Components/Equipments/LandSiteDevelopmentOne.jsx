@@ -30,13 +30,13 @@ const LandSiteDevelopmentOne = () => {
     <section className="min-h-[100vh] bg-[#f7f4ef] flex items-center px-6 lg:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
         
-        {/* IMAGE */}
+      
         <div
           ref={imageRef}
           className="relative h-[65vh] w-full rounded-[2.5rem] overflow-hidden shadow-2xl"
         >
           <img
-            src="/images/landsite-hero.jpg"
+            src="https://i.pinimg.com/736x/36/bd/ce/36bdce4a0ab5907b0bc4db4ab0883a14.jpg"
             alt="Land Development"
             className="h-full w-full object-cover"
           />

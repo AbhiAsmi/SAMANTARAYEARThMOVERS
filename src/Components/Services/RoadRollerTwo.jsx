@@ -24,11 +24,11 @@ const RoadRollerTwo = () => {
   const data = [
     {
       title: "Soil Compaction",
-      img: "/images/roller-soil.jpg",
+      img: "https://i.pinimg.com/736x/a5/d7/ed/a5d7ed5da7df636e781aecdae0d6bbd6.jpg",
     },
     {
       title: "Asphalt Compaction",
-      img: "/images/roller-asphalt.jpg",
+      img: "https://i.pinimg.com/736x/74/7c/49/747c49fcf683551f72ebb69d66504f0b.jpg",
     },
   ];
 

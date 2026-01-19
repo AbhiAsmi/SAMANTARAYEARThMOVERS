@@ -41,16 +41,12 @@ const TrailerOne = () => {
             and oversized loads using high-capacity trailers designed for safety
             and efficiency.
           </p>
-
-          <button className="bg-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition">
-            Request Transport
-          </button>
         </div>
 
         <div className="relative">
           <div className="absolute inset-0 bg-orange-500/20 blur-3xl rounded-full"></div>
           <img
-            src="/images/trailer1.jpg"
+            src="https://i.pinimg.com/736x/86/a5/0a/86a50ac7063109cc1e72387ce4f97c66.jpg"
             alt="Heavy trailer"
             className="relative rounded-2xl shadow-2xl"
           />

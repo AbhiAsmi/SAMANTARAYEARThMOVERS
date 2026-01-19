@@ -56,9 +56,12 @@ const RoadRollerOne = () => {
 
         <div className="relative">
           <div className="absolute -top-10 -right-10 w-[85%] h-[85%] bg-orange-500 rounded-xl"></div>
-          <img
+          <video
             ref={imageRef}
-            src="/images/roadroller1.jpg"
+            src="videos/Road_Roller_Compaction_Video_Generated.mp4"
+            muted
+            autoPlay
+            loop
             alt="Road roller"
             className="relative rounded-xl shadow-2xl"
           />

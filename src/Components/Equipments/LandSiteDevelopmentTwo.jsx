@@ -36,7 +36,6 @@ const LandSiteDevelopmentTwo = () => {
     <section className="bg-white py-28 px-6 lg:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         
-        {/* TEXT */}
         <div ref={textRef}>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-6">
             What We <span className="text-orange-600">Deliver</span>
@@ -60,8 +59,11 @@ const LandSiteDevelopmentTwo = () => {
           ref={imageRef}
           className="relative h-[60vh] rounded-[2.5rem] overflow-hidden shadow-2xl"
         >
-          <img
-            src="/images/landsite-work.jpg"
+          <video
+            src="videos/Excavation_and_Land_Clearing_Video.mp4"
+            muted
+            autoPlay
+            loop
             alt="Site preparation"
             className="h-full w-full object-cover"
           />

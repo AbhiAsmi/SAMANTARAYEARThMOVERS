@@ -5,21 +5,31 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const LandSiteDevelopmentThree = () => {
-  const cardsRef = useRef([]);
+  const sectionRef = useRef(null);
+  const textRef = useRef([]);
 
   useEffect(() => {
-    gsap.from(cardsRef.current, {
-      opacity: 0,
-      y: 100,
-      stagger: 0.25,
-      duration: 1,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: cardsRef.current[0],
-        start: "top 85%",
-        once: true,
+    gsap.fromTo(
+      textRef.current,
+      {
+        x: -200,
+        opacity: 0,
       },
-    });
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.3,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          end: "bottom 30%",
+          scrub: true, // 🔥 forward + reverse
+        },
+      }
+    );
+
+    return () => ScrollTrigger.killAll();
   }, []);
 
   const services = [
@@ -27,32 +37,31 @@ const LandSiteDevelopmentThree = () => {
     "Site Drainage Systems",
     "Soil Compaction",
     "Access Road Formation",
+    "Boundary Preparation",
+    "Utility Infrastructure Setup",
   ];
 
   return (
-    <section className="bg-[#f7f4ef] py-32 px-6">
-      <div className="max-w-6xl mx-auto mb-20">
-        <h2 className="text-4xl font-extrabold">
-          Land Development <span className="text-orange-600">Services</span>
-        </h2>
-      </div>
+    <section
+      ref={sectionRef}
+      className="bg-whitepy-40 px-6 overflow-hidden"
+    >
+      <h1 className="text-3xl md:text-7xl font-extrabold text-black mb-28 max-w-6xl mx-auto">
+        Land Site <span className="text-orange-500">Development</span>
+      </h1>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-14">
-        {services.map((s, i) => (
-          <div
+      <div className="max-w-6xl mx-auto space-y-16">
+        {services.map((service, i) => (
+          <h2
             key={i}
-            ref={(el) => (cardsRef.current[i] = el)}
-            className="bg-white rounded-[2.5rem] p-12 shadow-xl hover:-translate-y-4 transition-all duration-500"
+            ref={(el) => (textRef.current[i] = el)}
+            className="text-2xl md:text-4xl font-bold tracking-tight
+                       text-transparent bg-clip-text
+                       bg-gradient-to-r from-black to-yellow-400
+                       uppercase"
           >
-            <span className="text-orange-600 text-5xl font-extrabold block mb-6">
-              {i + 1}
-            </span>
-            <h3 className="text-2xl font-bold mb-4">{s}</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Executed using modern machinery and expert supervision to ensure
-              stable, regulation-ready land development.
-            </p>
-          </div>
+            {service}
+          </h2>
         ))}
       </div>
     </section>

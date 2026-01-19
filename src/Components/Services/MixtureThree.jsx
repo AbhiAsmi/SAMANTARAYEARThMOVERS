@@ -5,50 +5,60 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const MixtureThree = () => {
-  const stepsRef = useRef([]);
+  const textRef = useRef([]);
 
   useEffect(() => {
-    gsap.from(stepsRef.current, {
-      opacity: 0,
-      x: -60,
-      stagger: 0.25,
-      duration: 0.8,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: stepsRef.current[0],
-        start: "top 80%",
+    gsap.fromTo(
+      textRef.current,
+      {
+        x: -150,
+        opacity: 0,
       },
-    });
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.35,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: textRef.current[0],
+          start: "top 80%",
+          end: "bottom 30%",
+          scrub: true, // 🔥 forward + reverse
+        },
+      }
+    );
+
+    return () => ScrollTrigger.killAll();
   }, []);
 
   const steps = [
     "Material Loading",
     "Controlled Mixing Process",
     "Uniform Consistency Check",
-    "Concrete Discharge & Use",
+    "Concrete Discharge & Usage",
   ];
 
   return (
-    <section className="bg-gradient-to-br from-[#fff7ef] to-white py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12">
-          Mixing <span className="text-orange-500">Process</span>
-        </h2>
+    <section className="bg-white py-40 px-6 overflow-hidden">
+      
+      <h1 className="text-5xl md:text-5xl font-extrabold text-black mb-28 max-w-6xl mx-auto">
+        Mixing <span className="text-orange-500">Process</span>
+      </h1>
 
-        <div className="space-y-8">
-          {steps.map((step, i) => (
-            <div
-              key={i}
-              ref={(el) => (stepsRef.current[i] = el)}
-              className="flex items-center gap-6 bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
-            >
-              <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold">
-                {i + 1}
-              </div>
-              <p className="text-gray-700 font-medium">{step}</p>
-            </div>
-          ))}
-        </div>
+      <div className="max-w-6xl mx-auto space-y-20">
+        {steps.map((step, i) => (
+          <h2
+            key={i}
+            ref={(el) => (textRef.current[i] = el)}
+            className="
+              text-2xl md:text-3xl font-bold uppercase tracking-tight
+              text-transparent bg-clip-text
+              bg-gradient-to-r from-black via-yellow-400 to-orange-600
+            "
+          >
+            {step}
+          </h2>
+        ))}
       </div>
     </section>
   );
