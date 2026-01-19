@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const services = [
   {
@@ -17,28 +17,40 @@ const services = [
     title: "Road Construction",
     image: "photos/road_construction.png",
     video: "videos/istockphoto-2194819862-640_adpp_is.mp4",
-    desc: " We provide reliable, high-performance road rollers and professional road construction services to ensure strong, smooth and long-lasting roads for every project.",
+    desc: "We provide reliable, high-performance road rollers and professional road construction services to ensure strong, smooth and long-lasting roads for every project.",
   },
   {
     title: "Waterline Project",
     image: "photos/waterline project.png",
     video: "videos/istockphoto-500124416-640_adpp_is.mp4",
-    desc: "We provide powerful, heavy-duty trailers and transport support to safely carry large equipment, pipes, and materials for waterline construction and development projects, ensuring reliable performance and smooth execution from start to finish",
+    desc: "We provide powerful, heavy-duty trailers and transport support to safely carry large equipment, pipes, and materials for waterline construction and development projects.",
   },
 ];
 
 const Service = () => {
   const videoRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const togglePlay = (index) => {
+  const handleToggle = (index) => {
     const video = videoRefs.current[index];
     if (!video) return;
 
-    if (video.paused) {
-      video.play();
-    } else {
+    // stop previous video
+    if (activeIndex !== null && activeIndex !== index) {
+      const prevVideo = videoRefs.current[activeIndex];
+      if (prevVideo) {
+        prevVideo.pause();
+        prevVideo.currentTime = 0;
+      }
+    }
+
+    if (activeIndex === index) {
       video.pause();
       video.currentTime = 0;
+      setActiveIndex(null);
+    } else {
+      video.play();
+      setActiveIndex(index);
     }
   };
 
@@ -48,7 +60,7 @@ const Service = () => {
         Our <span className="text-orange-500">Services</span>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
         {services.map((item, index) => (
           <div
             key={index}
@@ -58,22 +70,29 @@ const Service = () => {
                        hover:shadow-[0_20px_40px_rgba(255,165,0,0.35)]
                        p-6"
           >
-            <h2 className="text-center text-xl font-semibold mb-4
+            <h2 className="text-center text-xl font-semibold mb-5
                            text-black group-hover:text-orange-500
                            transition-colors duration-300">
               {item.title}
             </h2>
             <div
-              className="relative h-[340px] w-[72%] mx-auto overflow-hidden
-                         rounded-xl cursor-pointer bg-white"
-              onClick={() => togglePlay(index)}
+              className="relative mx-auto overflow-hidden rounded-2xl cursor-pointer bg-white
+                         w-[90%] h-[260px]
+                         sm:w-[85%] sm:h-[320px]
+                         md:w-[80%] md:h-[420px]"
+              onClick={() => handleToggle(index)}
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-contain
-                           transition-opacity duration-500
-                           md:group-hover:opacity-0"
+                className={`absolute inset-0 w-full h-full object-cover
+                  transition-opacity duration-500
+                  ${
+                    activeIndex === index
+                      ? "opacity-0"
+                      : "opacity-100 md:group-hover:opacity-0"
+                  }
+                `}
               />
 
               <video
@@ -82,18 +101,25 @@ const Service = () => {
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-contain
-                           opacity-0 transition-opacity duration-500
-                           md:group-hover:opacity-100"
-                onMouseEnter={(e) => e.target.play()}
+                className={`absolute inset-0 w-full h-full object-cover
+                  transition-opacity duration-500
+                  ${
+                    activeIndex === index
+                      ? "opacity-100"
+                      : "opacity-0 md:group-hover:opacity-100"
+                  }
+                `}
+                onMouseEnter={(e) => {
+                  if (window.innerWidth >= 768) e.target.play();
+                }}
                 onMouseLeave={(e) => {
-                  e.target.pause();
-                  e.target.currentTime = 0;
+                  if (window.innerWidth >= 768) {
+                    e.target.pause();
+                    e.target.currentTime = 0;
+                  }
                 }}
               />
             </div>
-
-            {/* DESCRIPTION */}
             <p className="text-center text-gray-600 text-sm mt-6 leading-relaxed">
               {item.desc}
             </p>
