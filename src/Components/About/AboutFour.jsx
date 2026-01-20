@@ -69,16 +69,15 @@ const AboutFour = () => {
           <div className="h-[60vh] rounded-3xl overflow-hidden shadow-2xl relative">
 
             {/* IMAGE */}
-            <img
-              src="/images/why-choose-us-main.jpg"
+            <video
+              src="videos/Video_Generation_From_Business_Strengths.mp4"
+              muted
+              autoPlay
+              loop
               alt="Why choose us"
               className="w-full h-full object-cover"
             />
-
-            {/* WHITE → ORANGE GRADIENT OVERLAY */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/90 via-white/40 to-orange-400/30"></div>
-
-            {/* OPTIONAL SOFT BLUR LAYER (LUXURY FEEL) */}
+            <div className="absolute inset-0 "></div>
             <div className="absolute inset-0 backdrop-blur-[1.5px]"></div>
           </div>
         </div>

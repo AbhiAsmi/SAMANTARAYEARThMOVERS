@@ -5,21 +5,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutTwo = () => {
+  const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    gsap.from(cardsRef.current, {
-      opacity: 0,
-      y: 100,
-      stagger: 0.25,
-      duration: 1,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: cardsRef.current[0],
-        start: "top 85%",
-        once: true,
+    gsap.fromTo(
+      cardsRef.current,
+      {
+        opacity: 0,
+        x: -120,
       },
-    });
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.35,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 60%",
+          scrub: 0.8,
+        },
+      }
+    );
   }, []);
 
   const data = [
@@ -38,18 +47,23 @@ const AboutTwo = () => {
   ];
 
   return (
-    <section className="bg-white py-28 px-5 sm:px-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+    <section
+      ref={sectionRef}
+      className="bg-white py-24 px-6"
+    >
+      <div className="max-w-5xl mx-auto flex flex-col gap-10">
         {data.map((item, i) => (
           <div
             key={i}
             ref={(el) => (cardsRef.current[i] = el)}
-            className="border border-gray-200 rounded-3xl p-10 hover:shadow-xl transition"
+            className="border border-black rounded-xl p-8 bg-white"
           >
-            <h3 className="text-xl font-bold text-orange-500 mb-4">
+            <h3 className="text-xl font-semibold text-gray-800 mb-3">
               {item.title}
             </h3>
-            <p className="text-gray-600 leading-relaxed">{item.text}</p>
+            <p className="text-gray-600 leading-relaxed">
+              {item.text}
+            </p>
           </div>
         ))}
       </div>

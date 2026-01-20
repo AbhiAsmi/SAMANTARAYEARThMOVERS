@@ -22,7 +22,7 @@ const AboutOne = () => {
       >
         {/* TEXT */}
         <div>
-          <span className="text-orange-500 text-sm tracking-widest font-semibold uppercase">
+          <span className="text-orange-500 text-3xl tracking-widest font-semibold uppercase">
             About Us
           </span>
 
@@ -41,7 +41,7 @@ const AboutOne = () => {
         {/* IMAGE */}
         <div className="h-[45vh] sm:h-[55vh] rounded-3xl overflow-hidden">
           <img
-            src="/images/about-hero.jpg"
+            src="https://i.pinimg.com/1200x/18/b7/17/18b717930d1f9ff5560e8006e83dd53c.jpg"
             alt="About company"
             className="w-full h-full object-cover"
           />
