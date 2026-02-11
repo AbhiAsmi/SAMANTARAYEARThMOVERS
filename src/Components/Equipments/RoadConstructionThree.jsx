@@ -1,16 +1,22 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { img, title } from "framer-motion/client";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const RoadConstructionThree = () => {
   const itemsRef = useRef([]);
 
-  const images = [
-    "/roadconstruction/tom-shamberger--KAoVUNv9W0-unsplash.jpg",
-    "roadconstruction/maria-lupan-XeRqsvi9qBc-unsplash.jpg",
-    "roadconstruction/troy-mortier-eKY6_9W_iqY-unsplash.jpg",
+  const images = ["/photos/urban road construction.png",
+    "/photos/infra projects.png",
+    "/photos/land site project.png",
+  ];
+  const projects=[
+    {titel:"Urban Road Project",description:"Smooth, durable roads built with precision machinery.",img:""},
+    {titel:"Infrastructure Development",description:"Robust infrastructure solutions for modern urban landscapes.",img:""},
+    {titel:"LandSite Development",description:"Efficient land preparation for construction projects of all scales.",img:""}
+
   ];
 
   useEffect(() => {
@@ -50,9 +56,9 @@ const RoadConstructionThree = () => {
               />
 
               <div className="p-6">
-                <h4 className="font-bold mb-2">Urban Road Project</h4>
+                <h4 className="font-bold mb-2">{projects[i]?.titel}</h4>
                 <p className="text-gray-600 text-sm">
-                  Smooth, durable roads built with precision machinery.
+                  {projects[i]?.description}
                 </p>
               </div>
             </div>

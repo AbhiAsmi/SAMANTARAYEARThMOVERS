@@ -25,17 +25,17 @@ const MixtureTwo = () => {
   const services = [
     {
       title: "Residential Construction",
-      img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc",
+      img: "/photos/Residential Construction.png",
       desc: "Perfect for house foundations, slabs, and small-scale projects.",
     },
     {
       title: "Commercial Projects",
-      img: "https://images.unsplash.com/photo-1590650153855-d9e808231d41",
+      img: "/photos/Commercial Projects.png",
       desc: "Reliable mixing for buildings, warehouses, and offices.",
     },
     {
       title: "Infrastructure Work",
-      img: "https://images.unsplash.com/photo-1592833159051-5c3b2e1f7b8e",
+      img: "/photos/Infrastructure Work.png",
       desc: "Heavy-duty concrete mixing for roads, bridges, and drains.",
     },
   ];

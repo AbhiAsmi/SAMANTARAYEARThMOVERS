@@ -32,19 +32,23 @@ useEffect(() => {
   const machines = [
     {
       name: "Road Rollers",
-      img: "roadconstruction/istockphoto-965645454-1024x1024.jpg",
+      img: "/photos/road construction.png",
+      description:"A road roller compacts soil, gravel, or asphalt to create a strong, smooth, and durable surface for roads."
     },
     {
-      name: "Asphalt Pavers",
-      img: "roadconstruction/istockphoto-1387256339-1024x1024.jpg",
+      name: "Concrete Mixer Machines",
+      img: "/photos/mixer equipments (1).png",
+      description:"A mixer machine mixes cement, sand, aggregates, and water to produce uniform concrete for construction works."
     },
     {
-      name: "Motor Graders",
-      img: "roadconstruction/istockphoto-2164440235-1024x1024.jpg",
+      name: "Trailers & Dump Trucks",
+      img: "/photos/truck equipments.png",
+      description:"A trailer is a transport vehicle attached to trucks for carrying heavy construction materials, equipment, or machinery safely."
     },
     {
       name: "Excavators",
-      img: "roadconstruction/istockphoto-1765194151-1024x1024.jpg",
+      img: "/photos/excavator equipments.png",
+      description:"An excavator is a heavy machine used for digging, lifting, trenching, demolition, and moving large amounts of earth."
     },
   ];
 
@@ -72,7 +76,7 @@ useEffect(() => {
             ref={(el) => (cardsRef.current[i] = el)}
             className="group bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl"
           >
-            {/* Image */}
+
             <div className="h-[220px] w-full overflow-hidden">
               <img
                 src={item.img}
@@ -81,12 +85,10 @@ useEffect(() => {
               />
             </div>
 
-            {/* Content */}
             <div className="p-6">
               <h3 className="font-bold text-lg mb-2">{item.name}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                High-performance equipment engineered for durability, precision,
-                and smooth execution on all terrains.
+               {item.description}
               </p>
             </div>
           </div>

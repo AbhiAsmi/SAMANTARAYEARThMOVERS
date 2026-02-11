@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 const AboutThree = () => {
   const statsRef = useRef([]);
-  const hasAnimated = useRef(false); // 🔒 prevents re-run
+  const hasAnimated = useRef(false); 
 
   useEffect(() => {
     if (hasAnimated.current) return;
@@ -25,9 +25,9 @@ const AboutThree = () => {
   }, []);
 
   const stats = [
-    ["15", "Years Experience"],
-    ["120", "Projects Completed"],
-    ["50", "Heavy Machines"],
+    ["40", "Years Experience"],
+    ["1000", "Projects Completed"],
+    ["60", "Heavy Machines"],
     ["100", "Skilled Experts"],
   ];
 

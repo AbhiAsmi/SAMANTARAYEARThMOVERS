@@ -12,50 +12,55 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-6">
             <h2 className="text-2xl font-bold mb-6">WHY CHOOSE US?</h2>
+           <p>With 40+ years of experience, a 60+ vehicle fleet, and 1000+ completed projects, Samantaray Earthmovers delivers trusted solutions for infrastructure and land development.
+Our expertise in earthmoving, logistics, excavators, trailers, mixer machines, and road rollers ensures safe, timely, and long-lasting results.</p>
 
             <div className="space-y-6 text-sm md:text-base">
               <article>
-                <h3 className="font-semibold">Global Expertise</h3>
+                <h2 className="font-semibold ">Proven Scale & Trust :</h2>
                 <p className="mt-2 text-gray-700">
-                  With decades of experience in international shipping, we understand the
-                  complexities of global logistics. From customs regulations to regional
-                  challenges, we’ve mastered the art of delivering your goods safely and
-                  efficiently, no matter the destination.
+                40+ years experience · 1000+ projects completed
                 </p>
               </article>
               <article>
-                <h3 className="font-semibold">Advanced Technology</h3>
+                <h2 className="font-semibold mt-[-15px]">Modern fleet</h2>
                 <p className="mt-2 text-gray-700">
-                  Our state-of-the-art tracking and logistics systems ensure complete
-                  transparency and control. Real-time updates, automated notifications, and
-                  seamless integration with your business tools make shipping simpler and
-                  smarter.
+                  60+ vehicles including trailers, excavators, earthmovers, mixer machines, and road rollers
                 </p>
               </article>
 
               <article>
-                <h3 className="font-semibold">Customer-Centric Approach</h3>
+                <h2 className="font-semibold  mt-[-15px]">End-to-end logistics</h2>
                 <p className="mt-2 text-gray-700">
-                  Your satisfaction is our top priority. We tailor our services to meet your
-                  unique needs, offering personalized solutions and dedicated support every
-                  step of the way.
+                  heavy haulage, route planning, and timely delivery
                 </p>
               </article>
 
               <article>
-                <h3 className="font-semibold">Transparent Pricing</h3>
+                <h2 className="font-semibold  mt-[-15px]">Skilled teams & safety-first</h2>
                 <p className="mt-2 text-gray-700">
-                  No hidden fees, no surprises. We believe in clear, upfront pricing so you
-                  can plan your budget with confidence. Our competitive rates ensure you get
-                  the best value without compromising on quality.
+                certified operators, strict safety protocols, and quality oversight
+                </p>
+              </article>
+                 <article>
+                <h2 className="font-semibold  mt-[-15px]">Efficiency & accountability</h2>
+                <p className="mt-2 text-gray-700">
+                 clear project management, transparent progress updates
+
+                </p>
+              </article>
+                 <article>
+                <h2 className="font-semibold  mt-[-15px]">Long-term value</h2>
+                <p className=" text-gray-700">
+                  work designed to perform reliably for years
                 </p>
               </article>
             </div>
           </div>
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="w-full max-w-2xl lg:max-w-md rounded-2xl overflow-hidden shadow-lg">
+            <div className="w-full max-w-2xl lg:max-w-md rounded-2xl overflow-hidden shadow-lg pt-[50px] bg-[#fbf7f2]">
               <img
-                src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dHJ1Y2t8ZW58MHx8MHx8fDA%3D"
+                src="/photos/WhatsApp Image 2026-02-10 at 7.57.56 PM.jpeg"
                 alt="Logistics and shipping trucks in a warehouse"
                 className="w-full h-64 md:h-80 lg:h-96 object-cover"
                 loading="lazy"

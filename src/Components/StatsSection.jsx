@@ -58,7 +58,6 @@ const StatsSection = () => {
       ref={sectionRef}
       className="w-full overflow-hidden"
     >
-      {/* MAIN GRADIENT CONTAINER */}
       <div
         className="
           relative
@@ -70,42 +69,39 @@ const StatsSection = () => {
         "
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6 py-20">
-
-          {/* LEFT CONTENT */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-              Earthmoving Services, <br />
+              Our Services—, <br />
               Everlasting Value
             </h1>
 
             <div className="w-14 h-1 bg-orange-500 my-6"></div>
 
             <p className="text-gray-700 mb-4 max-w-lg">
-              We pride ourselves on being a leading provider of comprehensive
-              earthmoving services and infrastructure development solutions.
+              At Samantaray Earthmovers, we provide end-to-end earthmoving, construction support,
+               and logistics services for infrastructure and development projects of all scales. 
+               Backed by modern machinery and 
+              experienced operators, we ensure safe, timely, and efficient execution on every site.
             </p>
 
             <p className="text-gray-700 mb-12 max-w-lg">
-              With years of experience in the industry, we have earned a reputation
-              for delivering exceptional results and exceeding expectations.
+              Our services include earthmoving and land development, excavator operations, reliable logistics and heavy transportation, 
+              road roller services for compaction and roadworks, and mixer machine services for building and concrete works.
+               Each project is handled with precision, strict safety standards, and a commitment to long-term value.
             </p>
 
             <div className="flex gap-14 flex-wrap">
-              <Counter start={startCount} target={10} label="Years of Experience" />
-              <Counter start={startCount} target={200} label="Successful Projects" />
-              <Counter start={startCount} target={30} label="Machines & Equipment" />
+              <Counter start={startCount} target={40} label="Years of Experience" />
+              <Counter start={startCount} target={1000} label="Successful Projects" />
+              <Counter start={startCount} target={60} label="Machines & Equipment" />
             </div>
           </div>
-
-          {/* RIGHT IMAGE */}
           <div className="relative h-[420px] rounded-lg overflow-hidden shadow-xl">
             <img
-              src="photos/istockphoto-2182815724-1024x1024.jpg"
+              src="/photos/ChatGPT Image Feb 9, 2026, 11_43_56 PM.png"
               alt="Earthmoving Machine"
               className="absolute inset-0 w-full h-full object-cover"
             />
-
-            {/* IMAGE BLEND GRADIENT */}
             <div
               className="
                 absolute inset-0

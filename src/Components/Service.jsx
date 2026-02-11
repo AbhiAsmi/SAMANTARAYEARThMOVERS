@@ -4,25 +4,25 @@ const services = [
   {
     title: "Infrastructure Development",
     image: "photos/infrastructure developement.png",
-    video: "videos/Infrastructure_Video_Generation_Request.mp4",
+    video: "/videos/s earth movers~2.mp4",
     desc: "We provide advanced concrete mixer machines for a wide range of infrastructure projects, including building construction, bridges, highways, and dams, ensuring strong, reliable, and high-quality construction performance across every project.",
   },
   {
     title: "Land Site Development",
     image: "photos/landsite developement.png",
-    video: "videos/istockphoto-1791029853-640_adpp_is.mp4",
-    desc: "Advanced road machinery solutions for large projects.",
+    video: "/videos/s earth movers~4.mp4",
+    desc: "Landslide development uses excavators, bulldozers, loaders, dump trucks, and compactors to remove unstable soil, stabilize slopes, manage drainage, and safely prepare terrain for construction and infrastructure projects in challenging environments.",
   },
   {
     title: "Road Construction",
-    image: "photos/road_construction.png",
-    video: "videos/istockphoto-2194819862-640_adpp_is.mp4",
+    image: "/photos/road roller.png",
+    video: "/videos/road construction.mp4~2.mp4",
     desc: "We provide reliable, high-performance road rollers and professional road construction services to ensure strong, smooth and long-lasting roads for every project.",
   },
   {
     title: "Waterline Project",
-    image: "photos/waterline project.png",
-    video: "videos/istockphoto-500124416-640_adpp_is.mp4",
+    image: "/photos/trailers.png",
+    video: "/videos/s earth movers~3.mp4",
     desc: "We provide powerful, heavy-duty trailers and transport support to safely carry large equipment, pipes, and materials for waterline construction and development projects.",
   },
 ];

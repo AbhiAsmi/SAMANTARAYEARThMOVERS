@@ -64,7 +64,7 @@ const RoadConstructionOne = () => {
                      rounded-2xl overflow-hidden group shadow-2xl"
         >
           <img
-            src="photos/Gemini_Generated_Image_4c83wv4c83wv4c83.png"
+            src="/photos/road construction.png"
             alt="Road construction machinery"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />

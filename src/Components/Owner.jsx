@@ -1,18 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
   FaInstagram,
   FaFacebookF,
   FaXTwitter,
   FaLinkedinIn,
+  FaWhatsapp,
+  FaMap
 } from "react-icons/fa6";
 
 const Owner = () => {
+  const socialLinks = [
+    { icon: FaInstagram, url: "https://www.instagram.com/biplab.samantaray.7" },
+    { icon: FaFacebookF, url: "https://www.facebook.com/share/18FYvswNYs/" },
+    { icon: FaWhatsapp, url: "https://wa.me/919040224655" },
+    { icon: FaMap, url: "https://goo.gl/maps/sojGh3DHuRHUJD2T6?g_st=aw" },
+  ];
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/contact");
+  };
   return (
     <section className="relative text-gray-300 overflow-hidden">
-      
-      {/* BACKGROUND IMAGE */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -20,15 +32,9 @@ const Owner = () => {
             "url('photos/ChatGPT Image Dec 21, 2025, 12_29_54 PM.png')",
         }}
       ></div>
-
-      {/* BLACK → WHITE GRADIENT OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black to-white/10"></div>
-
-      {/* Decorative Glow */}
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl"></div>
-
-      {/* REDUCED HEIGHT HERE */}
       <div className="relative max-w-7xl mx-auto px-6 py-14">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -37,15 +43,13 @@ const Owner = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center"
         >
-          {/* LEFT CONTENT */}
           <div>
-            {/* SOCIAL ICONS */}
             <div className="flex gap-4 mb-6">
-              {[FaInstagram, FaFacebookF, FaXTwitter, FaLinkedinIn].map(
+              {[FaInstagram, FaFacebookF, FaWhatsapp, FaMap].map(
                 (Icon, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={socialLinks[i].url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
@@ -64,13 +68,13 @@ const Owner = () => {
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-white tracking-wide">
-              Samantray Logistics
+              Samantray Earthmovers
             </h1>
 
             <div className="w-16 h-[3px] bg-orange-500 mt-3 mb-6"></div>
 
             <p className="text-gray-300 leading-relaxed text-lg max-w-xl">
-              Samantray Logistics is a trusted name in logistics and infrastructure
+              Samantray Earthmovers is a trusted name in logistics and infrastructure
               services, delivering excellence with integrity, efficiency, and
               commitment for decades.
             </p>
@@ -92,8 +96,6 @@ const Owner = () => {
               </p>
             </div>
           </div>
-
-          {/* RIGHT CARD */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -126,14 +128,17 @@ const Owner = () => {
             </div>
 
             <motion.button
+            href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-8 w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 rounded-lg transition"
+              onClick={handleContactClick}
+              className="mt-10 w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold py-3 rounded-lg transition"
             >
               Get In Touch
             </motion.button>
           </motion.div>
         </motion.div>
+          <div className="absolute bottom-1 md:left-[40%] left-[10%]"><a href="https://tegnifix.com/">© 2026 <span className="text-orange-500">Tegnifix.com</span> · All Rights Reserved</a></div>
       </div>
     </section>
   );

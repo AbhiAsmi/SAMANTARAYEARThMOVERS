@@ -46,7 +46,7 @@ const TrailerOne = () => {
         <div className="relative">
           <div className="absolute inset-0 bg-orange-500/20 blur-3xl rounded-full"></div>
           <img
-            src="https://i.pinimg.com/736x/86/a5/0a/86a50ac7063109cc1e72387ce4f97c66.jpg"
+            src="/photos/trailer logistics.png"
             alt="Heavy trailer"
             className="relative rounded-2xl shadow-2xl"
           />

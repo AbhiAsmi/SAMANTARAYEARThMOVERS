@@ -18,14 +18,12 @@ const HomePage = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    // Video animation
+    
     gsap.fromTo(
       videoRef.current,
       { scale: 1.08, opacity: 0 },
       { scale: 1, opacity: 1, duration: 1.4, ease: "power3.out" }
     );
-
-    // Center text animation (bottom → up with stagger)
     gsap.fromTo(
       textRef.current.children,
       {
@@ -47,7 +45,7 @@ const HomePage = () => {
     <section className="relative w-full h-screen overflow-hidden">
       <video
         ref={videoRef}
-        src="photos/5200378-uhd_3840_2160_30fps.mp4"
+        src="videos/WhatsApp Video 2026-02-10 at 4.50.02 PM.mp4"
         autoPlay
         loop
         muted
@@ -55,19 +53,16 @@ const HomePage = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-
-      {/* CENTERED TEXT */}
       <div className="absolute inset-0 z-10 flex items-center justify-center text-white px-6">
         <div
           ref={textRef}
           className="flex flex-col items-center gap-5 text-center max-w-2xl"
         >
-          <h1 className="text-4xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Reliable{" "}
             <span className="text-orange-400">Logistics</span> <br />
-            & Heavy Equipment
+            & EarthMoving Services
           </h1>
 
           <p className="text-[20px] md:text-lg text-gray-200">

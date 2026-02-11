@@ -59,12 +59,8 @@ const Earthmoverthree = () => {
 
   return (
     <section className="relative w-full bg-gradient-to-br from-[#fffaf5] via-white to-[#fff1e6] py-20 px-6 overflow-hidden">
-      {/* Decorative background */}
       <div className="absolute -left-40 top-20 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-3xl"></div>
-
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-        
-        {/* TEXT CONTENT */}
         <div ref={textRef}>
           <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">
             What is <span className="text-orange-500">earthmoving</span>?
@@ -102,18 +98,15 @@ const Earthmoverthree = () => {
               active:scale-95
             "
           >
-            CALL & GET QUOTE
+        
           </button>
         </div>
-
-        {/* IMAGE SECTION */}
         <div className="relative flex justify-center lg:justify-end">
-          {/* Orange frame */}
           <div className="absolute -top-10 -right-10 w-[85%] h-[85%] bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl"></div>
 
           <img
             ref={imageRef}
-            src="https://media.istockphoto.com/id/1141690656/photo/crane-working-near-sand-quarry.jpg?s=2048x2048&w=is&k=20&c=3RxRCZWT0gUgK2wcEezUbKKueESaSVc-26RhFLPODh0=" // replace with your image path
+            src="/photos/what is earthmoving.png"
             alt="Earthmoving"
             className="
               relative z-10 w-full max-w-lg rounded-xl

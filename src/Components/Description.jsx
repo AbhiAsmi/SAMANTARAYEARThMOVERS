@@ -188,15 +188,11 @@ export default function Description({ items = defaultItems }) {
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* ARROW */}
             <div className="desc-arrow flex items-center justify-center">
               <ArrowIcon />
             </div>
-
-            {/* TEXT */}
             <div className="desc-text w-full md:w-[45%] px-2">
-              <h2 className="text-2xl font-semibold underline mb-3">
+              <h2 className="text-2xl font-semibold underline decoration-orange-600 mb-3">
                 {it.title}
               </h2>
               <p className="text-white md:text-black text-base md:text-lg leading-relaxed">

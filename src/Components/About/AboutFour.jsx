@@ -63,14 +63,10 @@ const AboutFour = () => {
             ))}
           </div>
         </div>
-
-        {/* RIGHT — IMAGE WITH GRADIENT */}
         <div className="relative hidden lg:block">
           <div className="h-[60vh] rounded-3xl overflow-hidden shadow-2xl relative">
-
-            {/* IMAGE */}
             <video
-              src="videos/Video_Generation_From_Business_Strengths.mp4"
+              src="/photos/5200378-uhd_3840_2160_30fps.mp4"
               muted
               autoPlay
               loop

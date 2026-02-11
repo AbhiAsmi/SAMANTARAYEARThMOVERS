@@ -26,11 +26,18 @@ const InfrastructureDevelopmentTwo = () => {
   }, []);
 
   const machines = [
-    { name: "Excavator", img: "photos/ChatGPT Image Dec 21, 2025, 12_38_02 PM.png" },
+    { name: "Earthmovers", img: "photos/ChatGPT Image Dec 21, 2025, 12_38_02 PM.png" },
     { name: "Road Roller", img: "photos/Gemini_Generated_Image_x58sxzx58sxzx58s~2.png" },
     { name: "Concrete Mixer", img: "photos/ChatGPT Image Dec 21, 2025, 12_29_54 PM.png" },
     { name: "Dump Truck", img: "photos/Gemini_Generated_Image_2r89lj2r89lj2r89.png" },
   ];
+  
+  const description =[
+    {des:"Earthmovers are used in infrastructure development for digging, trenching, earthmoving, and foundation construction."},
+    {des:"Road rollers compact soil and asphalt to ensure strong, smooth, and durable infrastructure roads."},
+    {des:"Mixer machines mix concrete materials uniformly to improve strength and quality in infrastructure projects."},
+    {des:"Trailers transport heavy construction materials and machinery efficiently for large infrastructure development projects."}
+  ]
 
   return (
     <section
@@ -64,7 +71,7 @@ const InfrastructureDevelopmentTwo = () => {
             <div className="p-6">
               <h3 className="font-bold text-xl mb-2">{m.name}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Designed for endurance, productivity, and precision execution.
+              {description[i]?.des}
               </p>
             </div>
 

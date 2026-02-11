@@ -28,7 +28,7 @@ const RoadRollerTwo = () => {
     },
     {
       title: "Asphalt Compaction",
-      img: "https://i.pinimg.com/736x/74/7c/49/747c49fcf683551f72ebb69d66504f0b.jpg",
+      img: "/photos/urban road construction.png",
     },
   ];
 

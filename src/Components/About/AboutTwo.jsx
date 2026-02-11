@@ -56,7 +56,7 @@ const AboutTwo = () => {
           <div
             key={i}
             ref={(el) => (cardsRef.current[i] = el)}
-            className="border border-black rounded-xl p-8 bg-white"
+            className="border border-[2px] border-orange-600 rounded-xl p-8 bg-white"
           >
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               {item.title}

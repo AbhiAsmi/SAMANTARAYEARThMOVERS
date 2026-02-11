@@ -41,30 +41,23 @@ const LandSiteDevelopmentFour = () => {
           expert planning, grading, and execution.
         </p>
       </div>
-
-      {/* Before After Container */}
       <div className="relative max-w-6xl mx-auto h-[65vh] rounded-[2.5rem] overflow-hidden shadow-2xl">
 
-        {/* AFTER IMAGE */}
         <img
-          src="/images/land-after.jpg"
+          src="/photos/1.png"
           alt="Developed land"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* BEFORE IMAGE */}
         <div
           className="absolute inset-0 overflow-hidden"
           style={{ width: `${position}%` }}
         >
           <img
-            src="/images/land-before.jpg"
+            src="/photos/2.png"
             alt="Raw land"
             className="w-full h-full object-cover"
           />
         </div>
-
-        {/* SLIDER */}
         <input
           type="range"
           min="0"
@@ -73,8 +66,6 @@ const LandSiteDevelopmentFour = () => {
           onChange={(e) => setPosition(e.target.value)}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[60%] accent-orange-600 cursor-pointer"
         />
-
-        {/* Divider Line */}
         <div
           className="absolute top-0 bottom-0 w-[2px] bg-orange-600"
           style={{ left: `${position}%` }}

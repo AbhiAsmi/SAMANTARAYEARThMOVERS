@@ -43,10 +43,10 @@ const MixtureOne = () => {
         {/* TEXT */}
         <div ref={textRef}>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Concrete <span className="text-orange-500">Mixture Machine</span>
+            Concrete <span className="text-orange-500">Mixer Machine</span>
           </h1>
           <p className="text-gray-600 mb-6 leading-relaxed">
-            Our mixture machines ensure uniform and high-quality concrete mixing
+            Our mixer machines ensure uniform and high-quality concrete mixing
             for residential, commercial, and infrastructure projects.
           </p>
           <p className="text-gray-600 mb-10 leading-relaxed">
@@ -64,7 +64,7 @@ const MixtureOne = () => {
           <div className="absolute -top-12 -right-12 w-[85%] h-[85%] bg-orange-500 rounded-xl"></div>
           <img
             ref={imageRef}
-            src="photos/ChatGPT Image Dec 21, 2025, 12_29_54 PM.png"
+            src="/photos/Concrete Mixture Machine.png"
             alt="Concrete mixer machine"
             className="relative rounded-xl shadow-2xl"
           />

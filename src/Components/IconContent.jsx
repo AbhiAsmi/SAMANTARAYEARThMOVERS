@@ -2,11 +2,11 @@ import React from "react";
 
 const IconContent = () => {
   const items = [
-    { img: "icon/Gemini_Generated_Image_1rxzly1rxzly1rxz.png", label: "Construction Equipments" },
-    { img: "icon/Gemini_Generated_Image_bnl6n9bnl6n9bnl6.png", label: "Dump Truck" },
-    { img: "icon/Gemini_Generated_Image_jbt2tfjbt2tfjbt2 (1).png", label: "Road Machine" },
-    { img: "icon/Gemini_Generated_Image_tflzn9tflzn9tflz.png", label: "Equipments" },
-    { img: "icon/Gemini_Generated_Image_1rxzly1rxzly1rxz.png", label: "Equipments" },
+    { img: "icon/Gemini_Generated_Image_1rxzly1rxzly1rxz.png", label: "Excavators" },
+    { img: "icon/Gemini_Generated_Image_bnl6n9bnl6n9bnl6.png", label: "Trailer" },
+    { img: "icon/Gemini_Generated_Image_jbt2tfjbt2tfjbt2 (1).png", label: "Road Roller" },
+    { img: "icon/Gemini_Generated_Image_tflzn9tflzn9tflz.png", label: "Mixer Machine" },
+    { img: "/icon/Gemini_Generated_Image_m0lfhpm0lfhpm0lf.png", label: "Earth Mover" },
   ];
 
   return (
